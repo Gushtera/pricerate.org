@@ -1,5 +1,5 @@
 # Use the official Microsoft Playwright image
-FROM mcr.microsoft.com/playwright/python:v1.45.0-jammy
+FROM mcr.microsoft.com/playwright/python:v1.54.0-jammy
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
