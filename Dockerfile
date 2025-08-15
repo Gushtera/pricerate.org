@@ -1,5 +1,5 @@
-# Use an official Python runtime as a parent image
-FROM python:3.11-slim
+# Use the official Microsoft Playwright image
+FROM mcr.microsoft.com/playwright/python:v1.45.0-jammy
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -11,13 +11,9 @@ WORKDIR /app
 # Install dependencies
 COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
-RUN playwright install --with-deps
 
 # Copy the project code
 COPY . /app/
 
 # Expose the port the app runs on
 EXPOSE 8000
-
-# We will not set a CMD or ENTRYPOINT here, as we want to run the crawler as a one-off command.
-# The user will run the crawler using `docker-compose run`.
