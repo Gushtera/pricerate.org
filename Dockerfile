@@ -11,6 +11,7 @@ WORKDIR /app
 # Install dependencies
 COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
+RUN playwright install --with-deps
 
 # Copy the project code
 COPY . /app/
